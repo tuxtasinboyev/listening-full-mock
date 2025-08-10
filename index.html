@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS CDI Listening Practice</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="timer-container">
+            <span class="timer-display">60:00</span>
+        </div>
+        <a href="https://t.me/cdieltslibrary" target="_blank" class="telegram-link">
+            CD IELTS LIBRARY
+            <span class="subtitle">CD formatdagi sifatli testlar</span>
+        </a>
+        <div class="header-icons">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5" />
+                    <path
+                        d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="audio-player-container">
+        <button id="play-pause-btn" class="player-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+            </svg>
+        </button>
+        <div class="progress-container">
+            <span id="current-time">0:00</span>
+            <input type="range" id="progress-bar" value="0" step="1">
+            <span id="total-duration">0:00</span>
+        </div>
+        <div class="controls-container">
+            <div class="volume-container">
+                <button id="volume-btn" class="player-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    </svg>
+                </button>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+            </div>
+            <div class="speed-container">
+                <button id="speed-btn" class="player-btn">1x</button>
+                <div id="speed-options" class="hidden">
+                    <div data-speed="0.5">0.5x</div>
+                    <div data-speed="0.75">0.75x</div>
+                    <div data-speed="1">1x</div>
+                    <div data-speed="1.25">1.25x</div>
+                    <div data-speed="1.5">1.5x</div>
+                    <div data-speed="2">2x</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <!-- Part 1 -->
+            <div id="part-1" class="question-part">
+                <div class="part-header">
+                    <p><strong>SECTION 1</strong></p>
+                    <p>Questions 1 - 10</p>
+                </div>
+                <div class="questions-container">
+                    <div class="question">
+                        <div class="question-prompt">
+                            <p>Complete the notes below.</p>
+                            <p>Write <strong>ONE WORD AND/OR A NUMBER</strong> for each answer.</p>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Job at Bellfield Garden Centre</h3>
+
+                            <div class="job-details">
+                                <p><strong>Job:</strong></p>
+                                <div class="example-row">
+                                    <span class="example-label">Example</span>
+                                    <p>Job title: garden centre <strong>assistant</strong></p>
+                                </div>
+                                <p>working mainly as a cashier</p>
+                                <p>will also</p>
+                                <ul>
+                                    <li>help with plants, and in the shop</li>
+                                    <li>help customers, starting after a <input type="text" id="q1" class="answer-input"
+                                            placeholder="1"></li>
+                                </ul>
+
+                                <p><strong>Requirements:</strong></p>
+                                <ul>
+                                    <li>an interest in <input type="text" id="q2" class="answer-input" placeholder="2">
+                                    </li>
+                                    <li>preferably knowing something about plants</li>
+                                </ul>
+
+                                <p><strong>Hours:</strong></p>
+                                <ul>
+                                    <li>working hours are flexible</li>
+                                    <li>5 days a week, usually including <input type="text" id="q3" class="answer-input"
+                                            placeholder="3"></li>
+                                    <li><input type="text" id="q4" class="answer-input" placeholder="4"> hours a week
+                                    </li>
+                                </ul>
+
+                                <p><strong>What's provided:</strong></p>
+                                <ul>
+                                    <li><input type="text" id="q5" class="answer-input" placeholder="5"> (about
+                                        everything they sell, and customer service)</li>
+                                    <li><input type="text" id="q6" class="answer-input" placeholder="6"> (but not
+                                        laundry)</li>
+                                    <li>staff discount</li>
+                                    <li>team <input type="text" id="q7" class="answer-input" placeholder="7"></li>
+                                    <li>financial help including vouchers for <input type="text" id="q8"
+                                            class="answer-input" placeholder="8"></li>
+                                </ul>
+
+                                <p><strong>Starting pay:</strong> £<input type="text" id="q9" class="answer-input"
+                                        placeholder="9"> per hour</p>
+                                <p><strong>Contact:</strong> Janice <input type="text" id="q10" class="answer-input"
+                                        placeholder="10"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part 2 -->
+            <div id="part-2" class="question-part hidden">
+                <div class="part-header">
+                    <p><strong>SECTION 2</strong></p>
+                    <p>Questions 11 - 20</p>
+                </div>
+                <div class="questions-container">
+                    <div class="question">
+                        <div class="question-prompt">
+                            <p><strong>Questions 11 and 12</strong></p>
+                            <p>Choose <strong>TWO</strong> letters, A - E.</p>
+                            <p>In which TWO ways are ward volunteers expected to help patients at lunchtimes?</p>
+                        </div>
+
+                        <div class="multiple-choice-container">
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="q11-12" value="A"> A feeding them</label>
+                                <label><input type="checkbox" name="q11-12" value="B"> B noting their food
+                                    preferences</label>
+                                <label><input type="checkbox" name="q11-12" value="C"> C making space to put their
+                                    meal</label>
+                                <label><input type="checkbox" name="q11-12" value="D"> D encouraging them to eat</label>
+                                <label><input type="checkbox" name="q11-12" value="E"> E putting food on plates</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-prompt">
+                            <p><strong>Questions 13 and 14</strong></p>
+                            <p>Choose <strong>TWO</strong> letters, A - E.</p>
+                            <p>Which TWO qualities are required in ward volunteers?</p>
+                        </div>
+
+                        <div class="multiple-choice-container">
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="q13-14" value="A"> A ability to cope with upsetting
+                                    situations</label>
+                                <label><input type="checkbox" name="q13-14" value="B"> B understanding of the effects of
+                                    different illnesses</label>
+                                <label><input type="checkbox" name="q13-14" value="C"> C ability to show
+                                    initiative</label>
+                                <label><input type="checkbox" name="q13-14" value="D"> D willingness to follow
+                                    rules</label>
+                                <label><input type="checkbox" name="q13-14" value="E"> E ability to make patients feel
+                                    cheerful</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-prompt">
+                            <p><strong>Questions 15 - 20</strong></p>
+                            <p>Which aspect of volunteering does each of the following volunteers comment on?</p>
+                            <p>Choose <strong>SIX</strong> answers from the box and write the correct letter, A - H,
+                                next to questions 15 - 20.</p>
+                        </div>
+
+                        <div class="aspects-box">
+                            <h4>Aspects of volunteering</h4>
+                            <div class="aspects-grid">
+                                <div>A being welcomed by patients</div>
+                                <div>B feeling part of a team</div>
+                                <div>C gaining self-confidence</div>
+                                <div>D having a regular routine</div>
+                                <div>E having expert support</div>
+                                <div>F hearing about patients' lives</div>
+                                <div>G seeing patients get better</div>
+                                <div>H understanding patients' needs</div>
+                            </div>
+                        </div>
+
+                        <div class="volunteers-section">
+                            <h4>Volunteers</h4>
+                            <div class="volunteer-answers">
+                                <div class="volunteer-row">
+                                    <span>15 Chris</span>
+                                    <input type="text" id="q15" class="answer-input letter-input" placeholder="15"
+                                        maxlength="1">
+                                </div>
+                                <div class="volunteer-row">
+                                    <span>16 Shaheen</span>
+                                    <input type="text" id="q16" class="answer-input letter-input" placeholder="16"
+                                        maxlength="1">
+                                </div>
+                                <div class="volunteer-row">
+                                    <span>17 Loc</span>
+                                    <input type="text" id="q17" class="answer-input letter-input" placeholder="17"
+                                        maxlength="1">
+                                </div>
+                                <div class="volunteer-row">
+                                    <span>18 Stephen</span>
+                                    <input type="text" id="q18" class="answer-input letter-input" placeholder="18"
+                                        maxlength="1">
+                                </div>
+                                <div class="volunteer-row">
+                                    <span>19 Magda</span>
+                                    <input type="text" id="q19" class="answer-input letter-input" placeholder="19"
+                                        maxlength="1">
+                                </div>
+                                <div class="volunteer-row">
+                                    <span>20 Richard</span>
+                                    <input type="text" id="q20" class="answer-input letter-input" placeholder="20"
+                                        maxlength="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part 3 -->
+            <div id="part-3" class="question-part hidden">
+                <div class="part-header">
+                    <p><strong>SECTION 3</strong></p>
+                    <p>Questions 21 - 30</p>
+                </div>
+                <div class="questions-container">
+                    <div class="question">
+                        <div class="question-prompt">
+                            <p><strong>Questions 21 - 25</strong></p>
+                            <p>What changes will Tania and Andy make to each of the following sections of their
+                                presentation on lighthouses?</p>
+                            <p>Choose <strong>FIVE</strong> answers from the box and write the correct letter, A - G,
+                                next to questions 21 - 25.</p>
+                        </div>
+
+                        <div class="changes-box">
+                            <h4>Changes</h4>
+                            <div class="changes-grid">
+                                <div>A add some information</div>
+                                <div>B make the information less vague</div>
+                                <div>C make the content more relevant</div>
+                                <div>D increase the visual element</div>
+                                <div>E reduce the amount of detail</div>
+                                <div>F reduce the amount of repetition</div>
+                                <div>G explain technical terms</div>
+                            </div>
+                        </div>
+
+                        <div class="sections-answers">
+                            <h4>Sections</h4>
+                            <div class="section-row">
+                                <span>21 Introduction</span>
+                                <input type="text" id="q21" class="answer-input letter-input" placeholder="21"
+                                    maxlength="1">
+                            </div>
+                            <div class="section-row">
+                                <span>22 History</span>
+                                <input type="text" id="q22" class="answer-input letter-input" placeholder="22"
+                                    maxlength="1">
+                            </div>
+                            <div class="section-row">
+                                <span>23 Construction</span>
+                                <input type="text" id="q23" class="answer-input letter-input" placeholder="23"
+                                    maxlength="1">
+                            </div>
+                            <div class="section-row">
+                                <span>24 Recent developments</span>
+                                <input type="text" id="q24" class="answer-input letter-input" placeholder="24"
+                                    maxlength="1">
+                            </div>
+                            <div class="section-row">
+                                <span>25 The future</span>
+                                <input type="text" id="q25" class="answer-input letter-input" placeholder="25"
+                                    maxlength="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-prompt">
+                            <p><strong>Questions 26 - 30</strong></p>
+                            <p>Choose the correct letter, A, B or C.</p>
+                        </div>
+
+                        <div class="single-choice-container">
+                            <div class="single-choice">
+                                <p><strong>26</strong> Tania says that one reason why sailors have always liked
+                                    lighthouses is that</p>
+                                <label><input type="radio" name="q26" value="A"> A they find the powerful lights
+                                    reassuring.</label>
+                                <label><input type="radio" name="q26" value="B"> B they are likely to be familiar with
+                                    some lighthouses.</label>
+                                <label><input type="radio" name="q26" value="C"> C they do not require special
+                                    equipment.</label>
+                            </div>
+
+                            <div class="single-choice">
+                                <p><strong>27</strong> What was the main function of ancient lighthouses?</p>
+                                <label><input type="radio" name="q27" value="A"> A to show the entrance to a
+                                    port</label>
+                                <label><input type="radio" name="q27" value="B"> B to warn about rocks and other
+                                    dangers</label>
+                                <label><input type="radio" name="q27" value="C"> C to enable sailors to navigate far
+                                    from land</label>
+                            </div>
+
+                            <div class="single-choice">
+                                <p><strong>28</strong> No new lighthouses were constructed for several centuries before
+                                    about 1100 because</p>
+                                <label><input type="radio" name="q28" value="A"> A traditional construction methods were
+                                    forgotten.</label>
+                                <label><input type="radio" name="q28" value="B"> B there was less trade than
+                                    previously.</label>
+                                <label><input type="radio" name="q28" value="C"> C beacons were used instead of
+                                    lighthouses.</label>
+                            </div>
+
+                            <div class="single-choice">
+                                <p><strong>29</strong> What do Andy and Tania particularly admire about the third
+                                    Eddystone lighthouse?</p>
+                                <label><input type="radio" name="q29" value="A"> A the building materials</label>
+                                <label><input type="radio" name="q29" value="B"> B the shape</label>
+                                <label><input type="radio" name="q29" value="C"> C the height</label>
+                            </div>
+
+                            <div class="single-choice">
+                                <p><strong>30</strong> They decide to talk about decommissioned lighthouses that have
+                                    been</p>
+                                <label><input type="radio" name="q30" value="A"> A converted into holiday homes.</label>
+                                <label><input type="radio" name="q30" value="B"> B abandoned.</label>
+                                <label><input type="radio" name="q30" value="C"> C turned into museums.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part 4 -->
+            <div id="part-4" class="question-part hidden">
+                <div class="part-header">
+                    <p><strong>SECTION 4</strong></p>
+                    <p>Questions 31 - 40</p>
+                </div>
+                <div class="questions-container">
+                    <div class="question">
+                        <div class="question-prompt">
+                            <p>Complete the notes below.</p>
+                            <p>Write <strong>NO MORE THAN TWO WORDS</strong> for each answer.</p>
+                        </div>
+
+                        <div class="notes-section">
+                            <h3>The first factories</h3>
+
+                            <h4>Pre-industrial revolution</h4>
+                            <p>Most people worked in the <input type="text" id="q31" class="answer-input"
+                                    placeholder="31"> sector</p>
+                            <p><input type="text" id="q32" class="answer-input" placeholder="32"> were the major
+                                disadvantage for workers involved in the 'putting out' system</p>
+
+                            <h4>Early factories</h4>
+                            <p>New types of machines meant that the <input type="text" id="q33" class="answer-input"
+                                    placeholder="33"> of manufacturing became necessary</p>
+                            <p>Workers were expected to obey orders about working and <input type="text" id="q34"
+                                    class="answer-input" placeholder="34"></p>
+                            <p>Factories could be built when a new type of cast iron became available for structural use
+                            </p>
+                            <p>Daylight wasn't necessary for factory workers because of the use of lamps fuelled by
+                                <input type="text" id="q35" class="answer-input" placeholder="35"></p>
+                            <p>1721, probably the earliest factory: made <input type="text" id="q36"
+                                    class="answer-input" placeholder="36"></p>
+                            <p>Energy source for this factory was <input type="text" id="q37" class="answer-input"
+                                    placeholder="37"></p>
+                            <p>Major change in methods of production: in the <input type="text" id="q38"
+                                    class="answer-input" placeholder="38"> sector</p>
+                            <p>Women living in dormitories had to follow many rules</p>
+                            <p>Most factory workers lived in slums where there was a serious risk of <input type="text"
+                                    id="q39" class="answer-input" placeholder="39"></p>
+                            <p>The goal of factory owners was usually to <input type="text" id="q40"
+                                    class="answer-input" placeholder="40"> workers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <div id="transcription-container">
+                <h2>Transcription</h2>
+                <pre id="transcription-text">Audio transcription will appear here when available...</pre>
+            </div>
+        </div>
+    </div>
+
+    <audio id="global-audio-player" class="hidden">
+        <source src="./public/Progress Check Test 1.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Navigation Arrows -->
+    <div class="nav-arrows">
+        <button class="nav-arrow" onclick="previousPart()" id="prevBtn">‹</button>
+        <button class="nav-arrow" onclick="nextPart()" id="nextBtn">›</button>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="nav-row" aria-label="Questions">
+        <div class="footer__questionWrapper multiple" role="tablist">
+            <button role="tab" class="footer__questionNo selected" onclick="switchToPart(1)">
+                <span>
+                    <span class="section-prefix">Section </span>
+                    <span class="sectionNr">1</span>
+                    <span class="attemptedCount">0 of 10</span>
+                </span>
+            </button>
+            <div class="footer__subquestionWrapper">
+                <button class="subQuestion" onclick="goToQuestion(1)"><span>1</span></button>
+                <button class="subQuestion" onclick="goToQuestion(2)"><span>2</span></button>
+                <button class="subQuestion" onclick="goToQuestion(3)"><span>3</span></button>
+                <button class="subQuestion" onclick="goToQuestion(4)"><span>4</span></button>
+                <button class="subQuestion" onclick="goToQuestion(5)"><span>5</span></button>
+                <button class="subQuestion" onclick="goToQuestion(6)"><span>6</span></button>
+                <button class="subQuestion" onclick="goToQuestion(7)"><span>7</span></button>
+                <button class="subQuestion" onclick="goToQuestion(8)"><span>8</span></button>
+                <button class="subQuestion" onclick="goToQuestion(9)"><span>9</span></button>
+                <button class="subQuestion" onclick="goToQuestion(10)"><span>10</span></button>
+            </div>
+        </div>
+
+        <div class="footer__questionWrapper multiple" role="tablist">
+            <button role="tab" class="footer__questionNo" onclick="switchToPart(2)">
+                <span>
+                    <span class="section-prefix">Section </span>
+                    <span class="sectionNr">2</span>
+                    <span class="attemptedCount">0 of 10</span>
+                </span>
+            </button>
+            <div class="footer__subquestionWrapper">
+                <button class="subQuestion" onclick="goToQuestion(11)"><span>11</span></button>
+                <button class="subQuestion" onclick="goToQuestion(12)"><span>12</span></button>
+                <button class="subQuestion" onclick="goToQuestion(13)"><span>13</span></button>
+                <button class="subQuestion" onclick="goToQuestion(14)"><span>14</span></button>
+                <button class="subQuestion" onclick="goToQuestion(15)"><span>15</span></button>
+                <button class="subQuestion" onclick="goToQuestion(16)"><span>16</span></button>
+                <button class="subQuestion" onclick="goToQuestion(17)"><span>17</span></button>
+                <button class="subQuestion" onclick="goToQuestion(18)"><span>18</span></button>
+                <button class="subQuestion" onclick="goToQuestion(19)"><span>19</span></button>
+                <button class="subQuestion" onclick="goToQuestion(20)"><span>20</span></button>
+            </div>
+        </div>
+
+        <div class="footer__questionWrapper multiple" role="tablist">
+            <button role="tab" class="footer__questionNo" onclick="switchToPart(3)">
+                <span>
+                    <span class="section-prefix">Section </span>
+                    <span class="sectionNr">3</span>
+                    <span class="attemptedCount">0 of 10</span>
+                </span>
+            </button>
+            <div class="footer__subquestionWrapper">
+                <button class="subQuestion" onclick="goToQuestion(21)"><span>21</span></button>
+                <button class="subQuestion" onclick="goToQuestion(22)"><span>22</span></button>
+                <button class="subQuestion" onclick="goToQuestion(23)"><span>23</span></button>
+                <button class="subQuestion" onclick="goToQuestion(24)"><span>24</span></button>
+                <button class="subQuestion" onclick="goToQuestion(25)"><span>25</span></button>
+                <button class="subQuestion" onclick="goToQuestion(26)"><span>26</span></button>
+                <button class="subQuestion" onclick="goToQuestion(27)"><span>27</span></button>
+                <button class="subQuestion" onclick="goToQuestion(28)"><span>28</span></button>
+                <button class="subQuestion" onclick="goToQuestion(29)"><span>29</span></button>
+                <button class="subQuestion" onclick="goToQuestion(30)"><span>30</span></button>
+            </div>
+        </div>
+
+        <div class="footer__questionWrapper multiple" role="tablist">
+            <button role="tab" class="footer__questionNo" onclick="switchToPart(4)">
+                <span>
+                    <span class="section-prefix">Section </span>
+                    <span class="sectionNr">4</span>
+                    <span class="attemptedCount">0 of 10</span>
+                </span>
+            </button>
+            <div class="footer__subquestionWrapper">
+                <button class="subQuestion" onclick="goToQuestion(31)"><span>31</span></button>
+                <button class="subQuestion" onclick="goToQuestion(32)"><span>32</span></button>
+                <button class="subQuestion" onclick="goToQuestion(33)"><span>33</span></button>
+                <button class="subQuestion" onclick="goToQuestion(34)"><span>34</span></button>
+                <button class="subQuestion" onclick="goToQuestion(35)"><span>35</span></button>
+                <button class="subQuestion" onclick="goToQuestion(36)"><span>36</span></button>
+                <button class="subQuestion" onclick="goToQuestion(37)"><span>37</span></button>
+                <button class="subQuestion" onclick="goToQuestion(38)"><span>38</span></button>
+                <button class="subQuestion" onclick="goToQuestion(39)"><span>39</span></button>
+                <button class="subQuestion" onclick="goToQuestion(40)"><span>40</span></button>
+            </div>
+        </div>
+
+        <button id="deliver-button" class="footer__deliverButton">
+            <span>Check Answers</span>
+        </button>
+    </nav>
+
+    <!-- Result Modal -->
+    <div id="result-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Your Results</h2>
+                <button id="modal-close-button" class="modal-close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="score-summary"></p>
+                <div id="result-details"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
